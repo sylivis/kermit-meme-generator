@@ -1,0 +1,8 @@
+.boxitem {
+    background-color: rgb(100, 181, 82);
+    color: aliceblue;
+    border-radius: 20px;
+    padding: 4px;
+    margin: 3px;
+    text-align: center;
+}
