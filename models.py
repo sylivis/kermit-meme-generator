@@ -85,7 +85,7 @@ class Meme(db.Model):
 
 class templateSchema(ma.Schema):
     class Meta:
-        fields = ['file_name']
+        fields = ['id', 'filename', 'user_added']
 
 da_template = templateSchema()
 da_templates = templateSchema(many=True)
