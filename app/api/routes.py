@@ -39,7 +39,7 @@ def new_meme(current_user_token):
 @token_required
 def see_templates(current_user_tokern):
     u = current_user_tokern.token
-    data = Empty_Template.query.filter_by(user_token = u).all()
+    data = Empty_Template.query.filter_by(user_added = u).all()
     response = da_templates.dump(data)
     return jsonify(response)
     
