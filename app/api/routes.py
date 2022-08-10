@@ -9,9 +9,9 @@ api = Blueprint('apy', __name__, url_prefix='/api')
 @token_required
 def add_template(current_user_token):
     filename = request.json['filename']
-    user_added = current_user_token.token
+    user_token = current_user_token.token
 
-    new_template = Empty_Template(filename, user_added)
+    new_template = Empty_Template(filename, user_token)
 
     db.session.add(new_template)
     db.session.commit()
@@ -39,7 +39,7 @@ def new_meme(current_user_token):
 @token_required
 def see_templates(current_user_tokern):
     u = current_user_tokern.token
-    data = Empty_Template.query.filter_by(user_added = u).all()
+    data = Empty_Template.query.filter_by(user_token = u).all()
     response = da_templates.dump(data)
     return jsonify(response)
     

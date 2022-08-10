@@ -49,7 +49,7 @@ class User(db.Model, UserMixin):
 
 class Empty_Template(db.Model):
     id = db.Column(db.String, primary_key=True)
-    filename = db.column(db.String(200))
+    filename = db.Column(db.String(200))
     user_added = db.Column(db.String, db.ForeignKey('user.token'))
     date_created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
    
